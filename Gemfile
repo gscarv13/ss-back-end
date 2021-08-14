@@ -20,6 +20,9 @@ gem 'puma', '~> 5.0'
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'devise-jwt', '~> 0.7.0'
+gem 'jsonapi-rails'
+gem 'jsonapi-rspec'
+gem 'rack-cors'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -38,6 +41,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'jsonapi-rspec'
   gem 'shoulda-matchers', '~> 5.0'
 end
 
