@@ -4,5 +4,9 @@ Rails.application.routes.draw do
     resources :sessions, only: %i[create destroy]
     resources :registrations, only: %i[create]
     get :logged_in, to: 'sessions#logged_in'
+
+    namespace :v1 do
+      resources :activities, only: %i[index]
+    end
   end
 end
