@@ -1,25 +1,22 @@
 module Api
   class SessionsController < ApplicationController
+    class AuthenticationError < StandardError; end
     include CurrentUserConcern
 
     def create
-      user = User.find_by(email: sign_in_params['email']).try(:authenticate, sign_in_params['password'])
+      user = User.find_by(email: sign_in_params['email'])
 
-      if user
+      if user&.authenticate(sign_in_params['password'])
         session[:user_id] = user.id
-        render json: {
-          status: :created,
-          logged_in: true,
-          user: user
-        }
+        render json: { logged_in: true, user: user }, status: :created
       else
-        render json: { status: :unauthorized }
+        render json: { error: 'Email or password is invalid' }, status: :unprocessable_entity
       end
     end
 
-    def delete
+    def destroy
       reset_session
-      render json: { status: :ok, logged_out: true }
+      render json: { logged_out: true }, status: :ok
     end
 
     def logged_in
