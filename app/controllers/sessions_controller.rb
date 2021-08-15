@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  include CurrentUserConcert
+  include CurrentUserConcern
 
   def create
-    user = User.find_by(email: params['user']['email']).try(:authenticate, params['user']['password'])
+    user = User.find_by(email: sign_in_params['email']).try(:authenticate, sign_in_params['password'])
 
     if user
       session[:user_id] = user.id
@@ -28,7 +28,13 @@ class SessionsController < ApplicationController
         user: @current_user
       }
     else
-      render json: { logged_in: false }
+      render json: { logged_in: false, test: sign_in_params['email'] }
     end
+  end
+
+  private
+
+  def sign_in_params
+    params.require(:user).permit(:email, :password)
   end
 end
