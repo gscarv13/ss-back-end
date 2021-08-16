@@ -7,6 +7,7 @@ module Api
 
       if @user&.authenticate(sign_in_params['password'])
         session[:user_id] = @user.id
+        set_current_user
         render :created, status: :created
       else
         render json: { error: 'Email or password is invalid' }, status: :unprocessable_entity

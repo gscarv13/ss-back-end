@@ -1,9 +1,13 @@
 module Api
   module V1
     class SchedulesController < ApplicationController
+      include CurrentUserConcern
+      before_action :set_activity, except: %i[index create]
+      before_action :check_session, except: %i[index]
+
       def index
-        items = Schedule.all
-        render json: { Schedule: items }
+        @items = Schedule.all
+        render :index
       end
 
       def create
