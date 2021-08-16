@@ -1,14 +1,13 @@
 module Api
   class SessionsController < ApplicationController
-    class AuthenticationError < StandardError; end
     include CurrentUserConcern
 
     def create
-      user = User.find_by(email: sign_in_params['email'])
+      @user = User.find_by(email: sign_in_params['email'])
 
-      if user&.authenticate(sign_in_params['password'])
-        session[:user_id] = user.id
-        render json: { logged_in: true, user: user }, status: :created
+      if @user&.authenticate(sign_in_params['password'])
+        session[:user_id] = @user.id
+        render :created, status: :created
       else
         render json: { error: 'Email or password is invalid' }, status: :unprocessable_entity
       end
@@ -21,10 +20,7 @@ module Api
 
     def logged_in
       if @current_user
-        render json: {
-          logged_in: true,
-          user: @current_user
-        }
+        render :logged_in
       else
         render json: { logged_in: false }
       end
