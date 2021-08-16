@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  self.implicit_order_column = 'created_at'
+
   EMAIL_REGEX = /\A([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})\z/i
 
   has_secure_password
@@ -11,4 +13,6 @@ class User < ApplicationRecord
   validates_format_of :email, with: EMAIL_REGEX
 
   validates_uniqueness_of :email
+
+  has_many :schedules
 end
