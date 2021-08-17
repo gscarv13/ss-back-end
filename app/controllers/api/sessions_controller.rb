@@ -3,12 +3,12 @@ module Api
     include CurrentUserConcern
 
     def create
-      @user = User.find_by(email: sign_in_params['email'])
+      user = User.find_by(email: sign_in_params['email'])
 
-      if @user&.authenticate(sign_in_params['password'])
-        session[:user_id] = @user.id
+      if user&.authenticate(sign_in_params['password'])
+        session[:user_id] = user.id
         set_current_user
-        render :created, status: :created
+        render json: UserSerializer.new(user).as_json, status: :created
       else
         render json: { error: 'Email or password is invalid' }, status: :unprocessable_entity
       end
@@ -21,7 +21,7 @@ module Api
 
     def logged_in
       if @current_user
-        render :logged_in
+        render json: UserSerializer.new(@current_user).as_json
       else
         render json: { logged_in: false }
       end

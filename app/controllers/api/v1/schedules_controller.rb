@@ -6,8 +6,8 @@ module Api
       before_action :check_session, except: %i[index]
 
       def index
-        @items = Schedule.all
-        render :index
+        items = Schedule.all
+        render json: { data: SchedulesSerializer.new(items).as_json }
       end
 
       def create
