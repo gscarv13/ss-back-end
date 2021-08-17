@@ -5,7 +5,10 @@ class SchedulesSerializer
 
   def as_json
     @schedules.map do |sch|
-      { date: sch.date }
+      {
+        'id' => sch.id,
+        'date' => sch.date
+      }
     end
   end
 end
