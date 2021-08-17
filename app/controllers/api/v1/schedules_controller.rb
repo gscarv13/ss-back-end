@@ -2,7 +2,6 @@ module Api
   module V1
     class SchedulesController < ApplicationController
       include CurrentUserConcern
-      before_action :set_activity, except: %i[index create]
       before_action :check_session, except: %i[index]
 
       def index
@@ -14,19 +13,20 @@ module Api
         item = Schedule.new(schedule_params)
 
         if item.save
-          header :created
+          head :created
         else
-          header :unprocessable_entity
+          head :unprocessable_entity
         end
       end
 
       def destroy
-        item = Schedule.find_by(params[:id])
+        item = Schedule.find_by(id: params[:id])
 
-        if item.destroy
-          header :ok
+        if item
+          item.destroy
+          head :ok
         else
-          header :unprocessable_entity
+          head :unprocessable_entity
         end
       end
 

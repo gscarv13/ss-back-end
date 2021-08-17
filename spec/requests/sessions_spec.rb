@@ -30,11 +30,7 @@ describe 'SS API Sessions', type: :request do
       post '/api/sessions/', params: { user: { email: user.email, password: user.password } }
 
       expect(response).to have_http_status(:created)
-      expect(JSON.parse(response.body)).to eq(
-        {
-          'logged_in' => true
-        }
-      )
+      expect(JSON.parse(response.body)).to eq(UserSerializer.new(user).as_json)
     end
 
     describe 'DELETE /session' do

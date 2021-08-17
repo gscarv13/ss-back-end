@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :activity do
-    title { "MyString" }
-    type { "" }
-    level { "MyString" }
-    description { "MyText" }
+    title { Faker::Lorem.word }
+    activity_type { Faker::Lorem.word }
+    level { Faker::Lorem.word }
+    description { Faker::Lorem.paragraph }
   end
 end
