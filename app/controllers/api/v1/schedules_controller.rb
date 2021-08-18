@@ -6,7 +6,7 @@ module Api
 
       def index
         items = Schedule.all
-        render json: { data: SchedulesSerializer.new(items).as_json }
+        render json: SchedulesSerializer.new(items).as_json
       end
 
       def create
