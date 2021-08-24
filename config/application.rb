@@ -34,6 +34,7 @@ module SsBackEnd
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.api_only = true 
     
     # setup UUID
     config.active_record.primary_key = :uuid

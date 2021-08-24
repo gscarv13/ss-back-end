@@ -1,11 +1,8 @@
 module Api
   module V1
     class SchedulesController < ApplicationController
-      include CurrentUserConcern
-      before_action :check_session, except: %i[index]
-
       def index
-        items = Schedule.all
+        items = Schedule.where(schedule_params)
         render json: SchedulesSerializer.new(items).as_json
       end
 
