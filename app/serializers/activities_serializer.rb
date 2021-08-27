@@ -9,6 +9,7 @@ class ActivitiesSerializer
         'id' => act.id,
         'activity_type' => act.activity_type,
         'title' => act.title,
+        'image' => act.image,
         'description' => act.description,
         'level' => act.level
       }

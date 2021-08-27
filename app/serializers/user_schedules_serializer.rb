@@ -8,7 +8,7 @@ class UserSchedulesSerializer
     @schedules.map do |schedule|
       {
         'id' => schedule.id,
-        'activity' => @activities.select { |entry| entry.last if entry[0] == schedule.activity_id }.flatten,
+        'activity' => @activities.select { |entry| entry if entry[0] == schedule.activity_id }[0][1],
         'date' => schedule.date
       }
     end
