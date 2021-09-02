@@ -8,7 +8,7 @@ describe 'Activities Actions', type: :request do
       get '/api/v1/activities'
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)['data'].length).to be(10)
+      expect(JSON.parse(response.body).length).to be(10)
     end
   end
 end

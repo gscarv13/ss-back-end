@@ -6,13 +6,13 @@ describe 'Schedules Actions', type: :request do
   let!(:schedule) { Schedule.create(date: Time.now, user_id: user.id, activity_id: activity.id) }
 
   describe 'GET /api/v1/schedules' do
-    it 'should return all schedules' do
+    it 'should return all schedules from an activity' do
       10.times { Schedule.create(date: Time.now, user_id: user.id, activity_id: activity.id) }
 
-      get '/api/v1/schedules'
+      get '/api/v1/schedules', params: { schedule: { activity_id: activity.id } }
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)['data'].length).to be(11)
+      expect(JSON.parse(response.body).length).to be(11)
     end
   end
 

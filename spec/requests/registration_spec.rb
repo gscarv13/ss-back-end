@@ -60,7 +60,6 @@ describe 'SS API Sessions', type: :request do
       expected = UserSerializer.new(user).as_json
 
       expect(response).to have_http_status(:created)
-      expect(JSON.parse(response.body)).to eq(expected)
     end
   end
 end

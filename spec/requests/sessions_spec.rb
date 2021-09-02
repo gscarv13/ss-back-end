@@ -46,17 +46,5 @@ describe 'SS API Sessions', type: :request do
         )
       end
     end
-
-    describe 'GET /logged_in' do
-      it 'should return false if the user is not currently authenticated' do
-        get '/api/logged_in'
-
-        expect(JSON.parse(response.body)).to eq(
-          {
-            'logged_in' => false
-          }
-        )
-      end
-    end
   end
 end
