@@ -1,8 +1,8 @@
-# Storm Mountain API
+# Storm Mountain API  - PT-BR
 
-> This is an API built on Ruby on Rails and PostgreSQL, where it is possible to create users, activities and schedules.
+> Esta é uma API construida com Ruby on Rails e PostgreSQL, onde é possivel criar usuários, atividades e agendar eventos.
 
-## Built With
+## Construído com:
 
 - Ruby 3
 - Ruby on Rails 6
@@ -14,44 +14,45 @@
 
 ## Live version
 
-You can check the live version in [this link](https://storm-mountain.herokuapp.com)
+Uma versão desse projeto esta disponível no Heroku [através desse link](https://storm-mountain.herokuapp.com)
 
-You can also check the React app consuming this API [here](https://github.com/gscarv13/ss-front-end/tree/feature/mvpv1.0)
+Um exemplo de aplicação que faz uso dessa API está disponível [aqui](https://github.com/gscarv13/ss-front-end/tree/feature/mvpv1.0)
 
-## Documentation
+## Documentação
 
-The complete documentation can be found [here](https://documenter.getpostman.com/view/17340539/U16euTRF)
+A documentação completa em inglês dessa API esta disponível [aqui](https://documenter.getpostman.com/view/17340539/U16euTRF)
 
-## Getting Started
+## Para Começar
 
-To get a local copy up and running follow these simple example steps.
+Para rodar esse projeto local siga as instruções abaixo.
 
-### Prerequisites
+### Prerequisitos
 
-- Ruby on Rails v 6.x. For more information on how to install Ruby on Rails, please follow this [link](https://guides.rubyonrails.org/getting_started.html)
+- Ruby on Rails v 6.x. Para maiores informações em como instalar Ruby on Rails, siga esse [link](https://guides.rubyonrails.org/getting_started.html)
 
-- Make sure you have PostgreSQL installed on your machine. For more information on how to set it up please follow [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
+- PostgreSQL. Para maiores informações em como instalar PostgreSQL em ambiente linux, siga esse [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
 
-### Setup and Install
+### Setup e instalação
 
-- Clone this repository using the link above (click on the 'code' button)
-- Open a terminal and `cd` to the cloned repository
-- Run `bundle install` to install ruby gems required the dependencies
-- Run `yarn` to install javascript required the dependencies
-- Run `bin/rails db:create` to create database
-- Run `bin/rails db:migrate` to migrate the database
+- Clone esse repositório
+- Abra o terminal e entre no diretório clonado
+- Entre `bundle install` Para instalar todas as dependencias do Rails
+- Em seguida `yarn` para instalar todas as dependencias do Javascript
+- Execute `bin/rails db:create` Para criar o banco de dados
+- Execute `bin/rails db:migrate` para migrar o banco de dados
 
-### Usage
+### Uso
 
-- Run `bin/rails server` to start the server
-- Enter output address from your terminal on your browser to access the page, for instance:
+- Execute `bin/rails server` para iniciar o servidor
+- Use o endereço que aparece no terminal para fazer as requisições, por exemplo:
 ```terminal
  Listening on http://127.0.0.1:3000
 ```
+- Os endpoints, e seus respectivos parâmetros e instruçẽso de uso estão disponiveis na [documentação](https://documenter.getpostman.com/view/17340539/U16euTRF)
 
 ### Tests
 
-To run the tests, move to the root folder of the project and enter the following command:
+Para rodar os testes, execute o seguinte comando,
 ```terminal
   $ bundle exec rspec
 ```
@@ -61,18 +62,22 @@ To run the tests, move to the root folder of the project and enter the following
 👤 **Gustavo Carvalho**
 
 - GitHub: [@gscarv13](https://github.com/gscarv13)
-- Twitter: [@Gscarv13](https://twitter.com/Gscarv13)
-- LinkedIn: [Gustavo Carvalho](https://www.linkedin.com/in/gscarv13)
 
-## 🤝 Contributing
+👤 **Christiane Mary Mayeda**
 
-Contributions, issues, and feature requests are welcome!
+- GitHub: [@ChristianeMaryMayeda](https://github.com/ChristianeMaryMayeda)
 
-Feel free to check the [issues page](https://github.com/gscarv13/ss-back-end/issues).
+👤 **Douglas Dias Alves**
 
-## Show your support
+- GitHub: [@DougPeD](https://github.com/DougPeD)
 
-Give a ⭐️ if you like this project!
+👤 **Wagner Jesus**
+
+- GitHub: [@Wagner53426](https://github.com/Wagner53426)
+
+👤 **Regivaldo Silva**
+
+- GitHub: [@RegivaldoSilva](https://github.com/RegivaldoSilva)
 
 ## 📝 License
 
