@@ -14,7 +14,7 @@
 
 ## Live version
 
-Uma versão desse projeto esta disponível no Heroku [através desse link](https://storm-mountain.herokuapp.com)
+Uma versão desse projeto esta disponível no Heroku, e o endereço base é `https://storm-mountain.herokuapp.com`. Para maiores detalhes de uso, visite a documentação.
 
 Um exemplo de aplicação que faz uso dessa API está disponível [aqui](https://github.com/gscarv13/ss-front-end/tree/feature/mvpv1.0)
 
