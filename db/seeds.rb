@@ -10,12 +10,12 @@ u = FactoryBot.create(:user)
 u2 = FactoryBot.create(:user)
 u3 = User.create(first_name: "Hiro", last_name: "Sasaki", email: "sasaki@vagabond.jp", password: "12345678", password_confirmation: "12345678")
 
-sn1_img = 'https://res.cloudinary.com/sdcnwco/image/upload/v1630034989/SS-API-images/snb1_humsnn.png'
-sn2_img = 'https://res.cloudinary.com/sdcnwco/image/upload/v1630034989/SS-API-images/snb2_i3dslm.png'
-sn3_img = 'https://res.cloudinary.com/sdcnwco/image/upload/v1630034989/SS-API-images/snb32_s3iaaa.png'
-sk1_img = 'https://res.cloudinary.com/sdcnwco/image/upload/v1630035071/SS-API-images/ski1_iolbx1.png'
-sk2_img = 'https://res.cloudinary.com/sdcnwco/image/upload/v1630167110/SS-API-images/sk2_vfb3cm.png'
-sk3_img = 'https://res.cloudinary.com/sdcnwco/image/upload/v1630167105/SS-API-images/sk3_gcdnak.png'
+sn1_img = 'https://gitlab.com/api/v4/projects/32390679/repository/files/images%2Fsnb1.png/raw?ref=main'
+sn2_img = 'https://gitlab.com/api/v4/projects/32390679/repository/files/images%2Fsnb2.png/raw?ref=main'
+sn3_img = 'https://gitlab.com/api/v4/projects/32390679/repository/files/images%2Fsnb32.png/raw?ref=main'
+sk1_img = 'https://gitlab.com/api/v4/projects/32390679/repository/files/images%2Fski1.png/raw?ref=main'
+sk2_img = 'https://gitlab.com/api/v4/projects/32390679/repository/files/images%2Fsk2.png/raw?ref=main'
+sk3_img = 'https://gitlab.com/api/v4/projects/32390679/repository/files/images%2Fsk3.png/raw?ref=main'
 
 sn1 = Activity.create(title: 'L1 Raw', image:  sn1_img, activity_type: 'Snowboard', level: 'Beginner', description: Faker::Lorem.paragraph)
 sn2 = Activity.create(title: 'L2 Rider', image: sn2_img, activity_type: 'Snowboard', level: 'Experienced', description: Faker::Lorem.paragraph)
